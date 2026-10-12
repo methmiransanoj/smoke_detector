@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8"/>
+    <meta name ="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Login page</title>
+    <!-- font awesome for the fire icon -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <!-- link the css file  -->
+     <link rel="stylesheet" href="login-style.css"/>
+</head>
+<body>
+    <div class="body-part">
+        <div class="left-side-login">
+            <div class="brand-icon">
+                <i class="fa-solid fa-fire"></i>
+            </div>
+            <h1>Smart Smoke Monitor</h1>
+            <span class="content-desrib-p1">Detect&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Monitor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp; Keep You Safe</span><br>
+            <span class="content-desrib-p2">Advance gas and smoke detection system for a safer tomorrow.</span>
+        </div>
+        <div class="right-side-login">
+            <div class="login-containers">    
+                <form id="loginform">
+                    <h2>Welcome Back</h2>
+                    <span class="content-desrib-p3">Sign in to your account</span>
+                    <div class="input-container">
+                        <i class="fa-solid fa-user input-icon"></i>
+                        <input  class="text-box" type="text" placeholder="Email or Username" id="username" required>
+                    </div>
+                    <div class="input-container">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input class="text-box" type="password" placeholder="Password" id="password" required>
+                    </div>
+                    <input class="checkbox-butt" type="checkbox">
+                    <span >Remember me</span>
+                    <button type="submit" class="login-button">Login</button>
+                    <p id="loginMessage"></p>
+                    <span class="content-desrib-p1">Secure&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;Reliable&nbsp;&nbsp;&nbsp;&bull;&nbsp; Smart</span>
+
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="login.js"></script>     <!-- connect java sript -->
+</body>
+</html>

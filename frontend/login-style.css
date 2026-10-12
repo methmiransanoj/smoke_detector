@@ -1,0 +1,260 @@
+/* ========================================================= 
+   LOGIN PAGE 
+   ========================================================= */ 
+ 
+.body-part { 
+    width: 100%; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 30px; 
+    position: relative; 
+    overflow: hidden; 
+    box-sizing:border-box; 
+    background: #000000; 
+} 
+ 
+/* Background image across the whole login page */ 
+.body-part::before { 
+    content: ""; 
+    position: absolute; 
+    inset: 0; 
+    background: url("login.jpg") 50% center / cover no-repeat; 
+    filter: blur(4px); 
+    transform: scale(1.04); 
+    opacity: 0.65; 
+    z-index: 0; 
+} 
+/* Dark overlay */ 
+.body-part::after { 
+    content: ""; 
+    position: absolute; 
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.249); 
+    z-index: 1; 
+} 
+/* Left and right sections */ 
+.left-side-login, 
+.right-side-login { 
+    position: relative; 
+    z-index: 2; 
+} 
+ 
+/* ========================================================= 
+   LEFT SIDE 
+   ========================================================= */ 
+.left-side-login { 
+    width: 50%; 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    justify-content: center; 
+    padding: 50px; 
+    background: rgba(3, 25, 47, 0); 
+} 
+ 
+/* Fire icon */ 
+.left-side-login .fa-fire { 
+    font-size: 48px; 
+    color: #e33f4f; 
+    margin-bottom: 25px; 
+ 
+} 
+ 
+/* Main title */ 
+.left-side-login h1, 
+.left-side-login h2 { 
+    font-size: 35px; 
+    font-weight: 550; 
+    color: #ffffff; 
+    margin-bottom: 12px; 
+} 
+/* ========================================================= 
+   RIGHT SIDE 
+   ========================================================= */ 
+.right-side-login { 
+    width: 40%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;  
+    background: rgba(3, 25, 47, 0); 
+} 
+ 
+/* Login box */ 
+.right-side-login form { 
+    width: 100%; 
+    max-width: 450px;
+    box-sizing: border-box; 
+    padding: 52px; 
+    border: 1px solid rgba(38, 42, 165, 0.3); 
+    border-radius: 8px; 
+    background: rgba(4, 30, 52, 0.63); 
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4); 
+} 
+.login-containers{ 
+    width: 82%; 
+    max-width: 425px; 
+    box-sizing: border-box;
+ 
+} 
+/* Welcome text */ 
+.right-side-login h2 { 
+    font-size: 32px; 
+    color: #ffffff; 
+    margin-bottom: 7px; 
+} 
+ 
+/* Account subtitle */ 
+.right-side-login h2 + p { 
+    font-size: 20px; 
+    color: #8faac1; 
+    margin-bottom: 24px; 
+} 
+ 
+/* ========================================================= 
+   INPUTS 
+   ========================================================= */ 
+ 
+.right-side-login .text-box { 
+    width: 100%; 
+    height: 45px; 
+    margin-bottom: 14px; 
+    padding: 0 15px; 
+    border: 1px solid #19486c; 
+    border-radius: 6px; 
+    outline: none; 
+    background: rgba(9, 52, 84, 0.85); 
+    color: #ffffff; 
+    font-size: 11px; 
+} 
+ 
+.right-side-login .text-box:focus { 
+    border-color: #1685ff; 
+    box-shadow: 0 0 10px rgba(22, 133, 255, 0.2); 
+} 
+ 
+.right-side-login .text-box::placeholder { 
+    color: #7896ae; 
+} 
+ 
+/* ========================================================= 
+   REMEMBER ME 
+   ========================================================= */ 
+ 
+.checkbox-butt { 
+    width: 12px; 
+    height: 12px; 
+    accent-color: #087cff; 
+    vertical-align: middle; 
+    margin-right: 5px; 
+} 
+ 
+.right-side-login label, 
+.right-side-login span { 
+    color: #9db4c9; 
+    font-size: 13px; 
+} 
+ 
+/* ========================================================= 
+   LOGIN BUTTON 
+   ========================================================= */ 
+ 
+.login-button { 
+    width: 100%; 
+    height: 45px; 
+    margin-top: 20px; 
+    border: none; 
+    border-radius: 6px; 
+    background: #087cff; 
+    color: #ffffff; 
+    font-size: 11px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.3s; 
+} 
+ 
+.login-button:hover { 
+    background: #006be6; 
+    box-shadow: 0 5px 18px rgba(0, 123, 255, 0.35); 
+} 
+ 
+/* ========================================================= 
+   LOGIN MESSAGE 
+   ========================================================= */ 
+ 
+#loginMessage { 
+    min-height: 16px; 
+    margin-top: 10px; 
+    text-align: center; 
+    color: #ff6875; 
+    font-size: 9px; 
+} 
+ 
+/* ========================================================= 
+   BOTTOM TEXT 
+   ========================================================= */ 
+ 
+.content-desrib-p1 { 
+    display: block; 
+    margin-top: 10px; 
+    text-align: center; 
+    color: #829db5; 
+    font-size: 15px; 
+} 
+.content-desrib-p2 { 
+    display: block; 
+    margin-top: 5px; 
+    text-align: center; 
+    color: #829db5; 
+    font-size: 15px; 
+} 
+.content-desrib-p3 { 
+    display: block; 
+    margin-bottom: 35px;   
+    color: #829db5; 
+    font-size: 15px !important; 
+}
+/* INPUT ICONS */
+
+.input-container {
+    width: 85%;
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.input-container .text-box {
+    margin-bottom: 0;
+    padding-left: 42px;
+    padding-right: 1px;
+}
+
+/* User and lock icons */
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7896ae;
+    font-size: 14px;
+    z-index: 2;
+}
+
+/* Show password icon */
+.password-icon {
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7896ae;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.password-icon:hover {
+    color: #ffffff;
+} 
+/*RESPONSIVE */ 

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8"/>
+    <meta name ="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Smart Smoke Monitor Dashbord</title>
+    <!-- font awesome for the fire icon -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <!-- link the css file  -->
+     <link rel="stylesheet" href="style.css"/>
+</head>
+<!-- navigation bar(part1) -->
+<body>
+    <header class="main-header">
+        <div class="brand-container">
+            <div class="brand-icon">
+                <i class="fa-solid fa-fire"></i>
+            </div>
+            <div>
+            <div class="brand-title">Smart Smoke Monitor Dashbord</div>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#Dashbord" class="nav-item-btn active">
+                    <i class=fa-solid fa-house></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li><a href="#one-grid" class="nav-item-btn ">
+                    <i class=fa-solid fa-chart-line></i>
+                    <span>Live Data</span>
+                </a>
+            </li>
+            <li><a href="#alert" class="nav-item-btn ">
+                    <i class=fa-solid fa-bell></i>
+                    <span>Alerts</span>
+                </a>
+            </li>
+            <li><a href="#report" class="nav-item-btn ">
+                    <i class=fa-solid fa-file-line></i>
+                    <span>Report</span>
+                </a>
+            </li>
+        </ul>
+        <div class="header-right">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <span>Operator</span>
+                <i class="fa-solid fa-chevron-down" style="font-size: 9px; color: var(--text-muted);"></i>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <!-- welcome section (part2) -->
+        <div class="welcome-section">
+            <div class="welcome-title">
+                <h2>Welcome, Operator</h2>
+                <p>Live Environment Monitoring</p>
+            </div>
+            <!-- time slot  -->
+            <div class="last-updated">
+                <div class="last-updated-label">
+                    <i class="fa-regular fa-clock"></i>
+                    <span>Finally Updated</span>
+                </div>
+                <div class="live-timestamp">30 Sep 2026 14:32:08</div>
+            </div>
+        </div>
+        <!-- part3 -->
+    <section class="metrics-grid-2">
+        <!-- device status -->
+        <div class="metric-card">
+            <div class="metric-info">
+                <span class="metric-title">Device Status</span>
+                <span class="metric-value val-online">Online</span>
+                <span class="metric-sub" id="last-seen-sub">Last seen:--</span>
+            </div>
+                <div class="metric-icon-box icon-online">
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+        </div>
+        <!-- device risk level -->
+        <div class="metric-card">
+            <div class="metric-info">
+                <span class="metric-title">Current Risk Level</span>
+                <span class="metric-value val-medium">MEDIUM</span>
+                <span class="metric-sub style" style="color: orange;">(MQ-135 High)</span>
+            </div>
+                <div class="metric-icon-box icon-medium">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+        </div>
+    </section>
+    <section class="one-grid" id="one-grid">
+        <!-- reading of three sensors (part4)  -->
+        <div class="dashboard-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <i class="fa-solid fa-wifi"></i>
+                    <span>Current Sensor Readings</span>
+                </div>
+            </div>
+            <div class="sensors-grid">
+                <!-- mq2 -->
+                <div class="sensor-box" >
+                    <div class="sensor-icon" style="color: #51c955;">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <div class="sensor-name">MQ-2</div>
+                    <div class="sensor-desc">(Smoke,LPG,Propane,Methane)</div>
+                    <div class="sensor-val" id="val-mq2">0</div>
+                    <span class="badge badge-normal">Normal</span>
+                </div>
+                <!-- mq9 -->
+                <div class="sensor-box">
+                    <div class="sensor-icon" style="color: rgb(82, 82, 242);">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <div class="sensor-name">MQ-9</div>
+                    <div class="sensor-desc">(Carbon monoxide,LPG,Methane)</div>
+                    <div class="sensor-val" id="val-mq9">0</div>
+                    <span class="badge badge-low">Low</span>
+                </div>
+                <!-- Mq-135 -->
+                <div class="sensor-box">
+                    <div class="sensor-icon" style="color: rgb(232, 168, 80);">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div class="sensor-name">MQ-135</div>
+                    <div class="sensor-desc">(Ammonia,Benzene,Smoke,CO2)</div>
+                    <div class="sensor-val" id="val-mq135">0</div>
+                    <span class="badge badge-high">High</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="two-col-grid">
+        <!-- latest data table (part5) -->
+        <div class="dashboard-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <i class="fa-solid fa-database"></i>
+                    <span>Latest Data</span>
+                </div>
+                <a href="# class="class="card-link">
+                    View ALL<i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="tabele-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>MQ-2</th>
+                            <th>MQ-9</th>
+                            <th>MQ-135</th>
+                            <th class="text-right">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="latest-data-body"></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- recent alerts () part6 -->
+        <div class="dashboard-card">
+            <div class="card-header">
+                <div class="card-title-group">
+                    <i class="fa-solid fa-bell" style="color:red"></i>
+                    <span>Recent Alerts </span>
+                </div>
+                    <a href="#report" class="card-link">
+                        View All <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+            </div>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Device</th>
+                            <th>Type</th>
+                            <th>Level</th>
+                            <th class="text-right">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="alerts-body">
+                        <!-- <tr>
+                            <td class="font-mono">14:32:08</td>
+                            <td>DEV-01</td>
+                            <td>Smoke</td>
+                            <td><span class="badge badge-high">HIGH</span></td>
+                            <td class="text-right"><span class="badge badge-high">Open</span></td>
+                        </tr> -->
+                        <!-- <tr>
+                            <td class="font-mono">12:37:22</td>
+                            <td>DEV-01</td>
+                            <td>Smoke</td>
+                            <td><span class="badge badge-warning">MEDIUM</span></td>
+                            <td class="text-right"><span class="badge badge-normal">Resolved</span></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div> 
+        </div>
+    </section>
+    <!-- footer (part 7) -->
+    <footer class="footer-bar">
+        <div class="footer-left">
+            <span style="color:rgb(44, 151, 92); font-weight: 600;">
+                <span class="status-dot-inline"></span> System Online
+            </span>
+            <span class="footer-divider">|</span>
+            <span style="color:rgb(44, 151, 92); font-weight: 500;">
+                <i class="fa-solid fa-shield-halved"></i> Safe environment
+            </span>
+            <span class="footer-divider">|</span>
+            <span>Monitoring 3 sensors</span>
+            <span class="footer-divider">|</span>
+            <span>1 device</span>
+        </div>
+
+        <div class="footer-right">
+            <span><i class="fa-solid fa-network-wired"></i> Connected via GSM / SMS</span>
+            <span class="footer-divider">|</span>
+            <span>Project_Binary_Bros</span>
+        </div>
+
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
