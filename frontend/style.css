@@ -171,6 +171,7 @@ body {
 .card-title-group i { color: #55a9ff; }
 .card-link { text-decoration: none; color: #5ca9ff; font-size: 10px; display: flex; align-items: center; gap: 5px; transition: 0.2s; }
 .card-link:hover { color: white; }
+.card-link1{text-decoration: none; color: #a5bedf;transition: 0.2ms;}
 
 /* --- SENSOR GRID --- */
 .sensors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }

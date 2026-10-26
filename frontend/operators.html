@@ -8,14 +8,126 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <!-- link the css file  -->
      <link rel="stylesheet" href="login-style.css"/>
+     <link rel="stylesheet" href="operator.css"/>
 </head>
 <body>
+    
     <div class="operator-body">
         <div class="brand-icon">
-            <i class="fa-solid fa-user"></i>
-            <h1>Operator Details</h1>
-            <span class="op-desc-p1">Manage operator accounts.Data is loaded from Excel file.</span>
+            <i class="fa-solid fa-users"></i>
+            <div class="brand-text">
+                <h1>Operator Details</h1>
+                <span class="op-desc-p1">Manage operator accounts.Data is loaded from Excel file.</span>
+            </div>
         </div>
-        <button type="submit" class="add-operator">+&nbsp;&nbsp;Add operator</button>
+        <button type="button" onclick="window.location.href='index.html'" class="backtodash"><i class="fa-solid fa-arrow-left"></i>&nbsp;&nbsp;Dashboard</button>
+        <button type="button" class="add-operator1" id="add-operator1"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add operator</button>
     </div>
+    <!-- operator table section -->
+     <div class="table-container">
+        <table class="operator-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="operatortablebody">
+                <tr>
+                    <td colspan="5">Loading operators...</td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+     <!-- add data to the table and delete data from the table  -->
+    <div class="forms-container">
+        <!-- add form -->
+        <section class="form-card" id="add-operator-section" >
+            <div class="from-header">
+                <h3><i class="fa-solid fa-user-plus"></i>Add New Operator</h3>
+            </div>
+            <form id="addOperatorForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Name <i class="fa-solid fa-pen-to-square"></i></label>
+                        <input id="addName" type="text" placeholder="Methmiran Sanoj" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email <i class="fa-solid fa-pen-to-square"></i></label>
+                        <input id="addEmail" type="email" placeholder="kasun@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Role <i class="fa-solid fa-pen-to-square"></i></label>
+                        <select id="addRole">
+                            <option value="Admin">Admin</option>
+                            <option value="Operator">operator</option>
+                            <option value="Viewer">viewer</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" id="cancelAdd">Cancel</button>
+                        <button type="submit" class="submit-btn"><i class="fa-solid fa-floppy-disk"></i>Save</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <!-- edit the table -->
+        <section class="form-card" id="edit-operatorSection">
+            <div class="from-header">
+                <h3><i class="fa-solid fa-pen"></i>Edit Operator</h3>
+            </div>
+            <form id="editOperatorForm">
+                <input type="hidden" id="editId">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Name <i class="fa-solid fa-pen-to-square"></i></label>
+                        <input type="text" id="editName" placeholder="Methmiran Sanoj" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email <i class="fa-solid fa-pen-to-square"></i></label>
+                        <input id="editEmail" type="email" placeholder="kasun@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Role <i class="fa-solid fa-pen-to-square"></i></label>
+                        <select id="editRole">
+                            <option value="Admin">Admin</option>
+                            <option value="Operator">operator</option>
+                           <option value="Viewer">viewer</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" id="cancelEdit">Cancel</button>
+                        <button type="submit" class="submit-btn"><i class="fa-solid fa-floppy-disk"></i>Update</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+    <footer class="footer-bar">
+        <div class="footer-left">
+            <span style="color:rgb(44, 151, 92); font-weight: 600;">
+                <span class="status-dot-inline"></span> System Online
+            </span>
+            <span class="footer-divider">|</span>
+            <span style="color:rgb(44, 151, 92); font-weight: 500;">
+                <i class="fa-solid fa-shield-halved"></i> Safe environment
+            </span>
+            <span class="footer-divider">|</span>
+            <span>Monitoring 3 sensors</span>
+            <span class="footer-divider">|</span>
+            <span>1 device</span>
+        </div>
+
+        <div class="footer-right">
+            <span><i class="fa-solid fa-network-wired"></i> Connected via GSM / SMS</span>
+            <span class="footer-divider">|</span>
+            <span>Project_Binary_Bros</span>
+        </div>
+
+    </footer>
+    <script src="operator.js"></script>
 </body>
+</html>

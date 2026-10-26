@@ -1,0 +1,334 @@
+/* ==========================================
+   Operator Management Page Styles
+   ========================================== */
+
+:root {
+    --bg-main: #041224;
+    --bg-card:#0b2038a0;
+    --bg-card-hover: #3445ccaa;
+    --border-color: #1e293b;
+    --text-main: #a0b9e9;
+    --text-muted: #d1d7e3;
+    --accent-blue: #3b82f6;
+    --accent-blue-hover: #2563eb;
+    --accent-red: #a41b1b;
+    --accent-red-hover: #dc2626;
+    --badge-admin: #8a5df5;
+    --badge-operator: #3b82f6;
+    --badge-viewer: #5c54a19d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding: 30px;
+    min-height: 100vh;
+}
+/* Header section */
+.operator-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+.brand-icon {
+display: flex;
+align-items: center;
+gap: 25px;
+font-size: 42px;
+}
+
+.brand-icon h1 {
+font-size: 24px;
+font-weight: 600;
+color: white;
+margin: 0 0 5px 0;
+}
+
+.brand-text {
+display: flex;
+flex-direction: column;
+}
+
+.op-desc-p1 {
+font-size: 14px;
+color: white;
+}
+/* back to dash button */
+.backtodash {
+    background-color: rgb(41, 225, 133);
+    margin-right: 8px;
+    color: #ffffff;
+    border: none;
+    margin-left: auto;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.add-operator1:hover {
+    background-color: var(--accent-blue-hover);
+}
+/* Add Operator Top Button */
+.add-operator1 {
+    background-color: rgb(56, 56, 240);
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.add-operator1:hover {
+    background-color: var(--accent-blue-hover);
+}
+
+/* Table Section */
+.table-container {
+    width: 100%;
+    
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.445), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.operator-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.operator-table th {
+    background-color: rgba(30, 30, 75, 0.5);
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.operator-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.operator-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.operator-table tbody tr:hover {
+    background-color: rgba(21, 47, 194, 0.193);
+}
+
+/* Role Badges */
+.role-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+}
+
+.role-admin { background-color: var(--badge-admin); color: #fff; }
+.role-operator { background-color: var(--badge-operator); color: #fff; }
+.role-viewer { background-color: var(--badge-viewer); color: #fff; }
+
+/* Table Actions Buttons */
+.action-btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn, .delete-btn {
+    
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;
+    color: #fff;
+    
+}
+
+
+.edit-btn {
+    background-color: rgb(56, 56, 240);
+    margin-right: 17px;
+}
+
+.edit-btn:hover {
+    background-color: var(--accent-blue-hover);
+}
+
+.delete-btn {
+    background-color: var(--accent-red);
+    font-family: Arial, sans-serif !important;
+}
+
+.delete-btn:hover {
+    background-color: var(--accent-red-hover);
+}
+.edit-btn i
+.delete-btn i {
+    margin-right: 5px;
+}
+
+/* Forms Container (Side-by-side layout) */
+.forms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.form-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.from-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color:white;
+}
+
+.from-header h3 i {
+    color: var(--accent-blue);
+    text-shadow: 0 0 8px #1061c5
+}
+
+.form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group label i {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.form-group input, 
+.form-group select {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--text-main);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: var(--accent-blue);
+}
+
+/* Form Actions (Buttons inside forms) */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cancel-btn, .submit-btn {
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cancel-btn {
+    background-color: #1f2937;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.cancel-btn:hover {
+    background-color: #374151;
+}
+
+.submit-btn {
+    background-color: rgb(56, 56, 240);
+    color: #ffffff;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-blue-hover);
+}
+/* --- FOOTER --- */
+.footer-bar {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 13px 30px;
+    border-top: 1px solid #30455b !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 9px;
+}
+.footer-left, .footer-right { display: flex; align-items: center; gap: 8px; }
+.footer-divider { color: #30455b; }
+.status-dot-inline {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #29d394;
+    margin-right: 4px;
+    box-shadow: 0 0 7px rgba(41, 211, 148, 0.7);
+}
