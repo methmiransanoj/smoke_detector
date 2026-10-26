@@ -274,20 +274,64 @@ function getAlertSensor() {
     return "-";
 }
 
-// 17. CHECK FOR ALERT
-function checkForAlert() {
-    if (!deviceOnline) {
+// CHECK FOR ALERT AND SAVE IT TO THE BACKEND
+async function checkForAlert() {
+    if (!deviceOnline) return;
+
+    const risk = getRiskLevel();
+
+    if (risk === "WAITING") return;
+
+    if (risk === "LOW") {
+        lastAlertLevel = "LOW";
         return;
     }
-    let risk = getRiskLevel();
-    if (risk === lastAlertLevel) {
-        return;
+
+    if (risk === lastAlertLevel) return;
+
+    const sensor = getAlertSensor();
+
+    let value = 0;
+
+    if (sensor === "MQ-2") {
+        value = sensorData.mq2;
+    } else if (sensor === "MQ-9") {
+        value = sensorData.mq9;
+    } else if (sensor === "MQ-135") {
+        value = sensorData.mq135;
     }
-    if (risk === "MEDIUM" || risk === "HIGH") {
-        let sensor = getAlertSensor();
-        addAlert(sensor, risk);
+
+    try {
+        const response = await fetch("/api/alerts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                device: "Smart Smoke Monitor",
+                sensor: sensor,
+                value: value,
+                level: risk,
+                status: "Active"
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error("Unable to save alert");
+        }
+
+        const result = await response.json();
+
+        lastAlertLevel = risk;
+
+        if (result.success) {
+            addAlert(sensor, risk);
+            console.log("Alert saved:", result.alert);
+        }
+
+    } catch (error) {
+        console.error("Error saving alert:", error);
     }
-    lastAlertLevel = risk;
 }
 // 18. ADD ALERT TO RECENT ALERTS TABLE
 function addAlert(sensor, level) {

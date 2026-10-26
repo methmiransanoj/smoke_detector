@@ -61,20 +61,22 @@ font-size: 14px;
 color: white;
 }
 /* back to dash button */
+
 .backtodash {
-    background-color: rgb(41, 225, 133);
-    margin-right: 8px;
-    color: #ffffff;
-    border: none;
-    margin-left: auto;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.2s ease;
+color:white;
+background: #122b5c;
+border: 1px solid #2855a5;
+padding: 10px 18px;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.2s ease;
+margin-right: 20px;
+margin-left: auto;
+
+}
+
+.backtodash:hover {
+background: #1a3b78;
 }
 
 .add-operator1:hover {
@@ -84,7 +86,7 @@ color: white;
 .add-operator1 {
     background-color: rgb(56, 56, 240);
     color: #ffffff;
-    border: none;
+    border: black;
     padding: 10px 18px;
     border-radius: 8px;
     font-size: 14px;

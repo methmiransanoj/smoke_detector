@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
 const XLSX = require("@stackline/xlsx");
 
 const app = express();
@@ -12,7 +13,25 @@ app.use(express.static(path.join(__dirname, "../frontend")));
 
 // File path for operator spreadsheet
 const filePath = path.join(__dirname, "operator.ods");
-
+// ALERT STORAGE
+const alertsFilePath = path.join(__dirname, "report.json");
+// Create alerts.json automatically if it doesn't exist
+if (!fs.existsSync(alertsFilePath)) {
+    fs.writeFileSync(alertsFilePath, "[]", "utf8");
+}
+// Read all saved alerts
+function getAlerts() {
+    try {
+        return JSON.parse(fs.readFileSync(alertsFilePath, "utf8"));
+    } catch (error) {
+        console.error("Error reading alerts:", error);
+        throw error;
+    }
+}
+// Save all alerts
+function saveAlerts(alerts) {
+    fs.writeFileSync( alertsFilePath,JSON.stringify(alerts, null, 2),"utf8");
+}
 // Helper to read operators from ODS file
 const getOperators = () => {
     try {
@@ -90,43 +109,112 @@ app.post("/login", (req, res) => {
     }
 });
 
-// ==========================================
-// 2. SENSOR ENDPOINTS
-// ==========================================
+// SENSOR DATA
 let sensorData = {
     mq2: 0,
     mq9: 0,
     mq135: 0,
     smokeDetected: false,
-    alertTime: null
+    alertTime: null,
+    deviceOnline: false,
+    lastReceived: null
 };
-
+// RECEIVE SENSOR DATA
 app.post("/api/sensors", (req, res) => {
     const { mq2, mq9, mq135, smokeDetected } = req.body;
+
     sensorData = {
-        mq2: mq2 ?? 0,
-        mq9: mq9 ?? 0,
-        mq135: mq135 ?? 0,
+        mq2: Number(mq2) || 0,
+        mq9: Number(mq9) || 0,
+        mq135: Number(mq135) || 0,
         smokeDetected: smokeDetected ?? false,
         alertTime: smokeDetected
             ? new Date().toISOString()
-            : sensorData.alertTime
+            : sensorData.alertTime,
+        deviceOnline: true,
+        lastReceived: new Date().toISOString()
     };
+
     res.json({
         success: true,
         message: "Sensor data received"
     });
 });
 
+// SEND SENSOR DATA TO DASHBOARD
 app.get("/api/sensors", (req, res) => {
-    res.json(sensorData);
+    // Consider the device offline if no data arrives for 15 seconds.
+    const lastTime = sensorData.lastReceived
+        ? new Date(sensorData.lastReceived).getTime()
+        : 0;
+
+    const online = lastTime > 0 &&
+        Date.now() - lastTime < 15000;
+
+    res.json({
+        ...sensorData,
+        deviceOnline: online
+    });
+});
+// GET ALL SAVED ALERTS
+app.get("/api/alerts", (req, res) => {
+    try {
+        const alerts = getAlerts();
+        res.json(alerts);
+    } catch (error) {
+        res.status(500).json({
+            error: "Unable to load alerts"
+        });
+    }
 });
 
-// ==========================================
-// 3. OPERATOR MANAGEMENT ENDPOINTS (ODS CRUD)
-// ==========================================
+// CREATE AND SAVE A NEW ALERT
+app.post("/api/alerts", (req, res) => {
+    try {
+        const { device, sensor, value, level, status } = req.body;
 
-// READ ALL OPERATORS
+        if (!device || !sensor || !level || !status) {
+            return res.status(400).json({
+                error: "Device, sensor, level and status are required"
+            });
+        }
+
+        if (value === undefined || value === null || !Number.isFinite(Number(value))) {
+            return res.status(400).json({
+                error: "A valid sensor value is required"
+            });
+        }
+
+        const alerts = getAlerts();
+
+        const newAlert = {
+            id: Date.now().toString() + "-" +
+                Math.random().toString(36).slice(2, 8),
+            time: new Date().toISOString(),
+            device: String(device),
+            sensor: String(sensor),
+            value: Number(value),
+            level: String(level).toUpperCase(),
+            status: String(status)
+        };
+
+        alerts.unshift(newAlert);
+        saveAlerts(alerts);
+
+        res.status(201).json({
+            success: true,
+            alert: newAlert
+        });
+
+    } catch (error) {
+        console.error("Error saving alert:", error);
+
+        res.status(500).json({
+            error: "Unable to save alert"
+        });
+    }
+});
+// 3. OPERATOR MANAGEMENT ENDPOINTS (ODS CRUD)
 // READ ALL OPERATORS
 app.get("/api/operators", (req, res) => {
     try {
