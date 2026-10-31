@@ -1,3 +1,245 @@
 [
-  
+  {
+    "id": "1793454133234-h5ueeb",
+    "time": "2026-10-31T13:42:13.234Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 273,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793454128231-6yby7r",
+    "time": "2026-10-31T13:42:08.231Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 683,
+    "level": "HIGH",
+    "status": "Active"
+  },
+  {
+    "id": "1793454123245-5urx8l",
+    "time": "2026-10-31T13:42:03.245Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 204,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793454093245-eb2855",
+    "time": "2026-10-31T13:41:33.245Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 499,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793454088244-z36hx4",
+    "time": "2026-10-31T13:41:28.244Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 704,
+    "level": "HIGH",
+    "status": "Active"
+  },
+  {
+    "id": "1793454078243-sq1oqq",
+    "time": "2026-10-31T13:41:18.243Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 244,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793454058234-9bp7w6",
+    "time": "2026-10-31T13:40:58.234Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 261,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793454054207-p2z7vs",
+    "time": "2026-10-31T13:40:54.207Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 261,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453999691-0nwbl5",
+    "time": "2026-10-31T13:39:59.691Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 287,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453994676-enfons",
+    "time": "2026-10-31T13:39:54.676Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 720,
+    "level": "HIGH",
+    "status": "Active"
+  },
+  {
+    "id": "1793453994229-5x9g5g",
+    "time": "2026-10-31T13:39:54.229Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 720,
+    "level": "HIGH",
+    "status": "Active"
+  },
+  {
+    "id": "1793453984686-7erj25",
+    "time": "2026-10-31T13:39:44.686Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 454,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453979678-13knff",
+    "time": "2026-10-31T13:39:39.678Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 604,
+    "level": "HIGH",
+    "status": "Active"
+  },
+  {
+    "id": "1793453969684-oq7oxf",
+    "time": "2026-10-31T13:39:29.684Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 295,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453646824-9bpgpm",
+    "time": "2026-10-31T13:34:06.824Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 266,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453641820-jz1tp5",
+    "time": "2026-10-31T13:34:01.820Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 719,
+    "level": "HIGH",
+    "status": "Active"
+  },
+  {
+    "id": "1793453626828-74aann",
+    "time": "2026-10-31T13:33:46.828Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 234,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453596832-jdel79",
+    "time": "2026-10-31T13:33:16.832Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 375,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453586838-l0w8kf",
+    "time": "2026-10-31T13:33:06.838Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 865,
+    "level": "HIGH",
+    "status": "Active"
+  },
+  {
+    "id": "1793453574217-xtc9u2",
+    "time": "2026-10-31T13:32:54.218Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 294,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453561831-kt4lcb",
+    "time": "2026-10-31T13:32:41.831Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 201,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453494694-g7lpn2",
+    "time": "2026-10-31T13:31:34.694Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 385,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453489683-h7hic6",
+    "time": "2026-10-31T13:31:29.683Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 853,
+    "level": "HIGH",
+    "status": "Active"
+  },
+  {
+    "id": "1793453479685-tylg2s",
+    "time": "2026-10-31T13:31:19.686Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 397,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453422018-q58s04",
+    "time": "2026-10-31T13:30:22.018Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 245,
+    "level": "MEDIUM",
+    "status": "Active"
+  },
+  {
+    "id": "1793453417796-8m34c2",
+    "time": "2026-10-31T13:30:17.797Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 540,
+    "level": "HIGH",
+    "status": "Active"
+  },
+  {
+    "id": "1793453412805-adxy3n",
+    "time": "2026-10-31T13:30:12.805Z",
+    "device": "Smart Smoke Monitor",
+    "sensor": "MQ-9",
+    "value": 292,
+    "level": "MEDIUM",
+    "status": "Active"
+  }
 ]

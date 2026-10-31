@@ -39,7 +39,7 @@ async function fetchOperators() {
             if (String(u.role).toLowerCase() !== "admin") {
                 const del = document.createElement("button");
                 del.className = "delete-btn";
-                del.innerHTML='<i class="fas fa-trash"> Delete';
+                del.innerHTML='<i class="fas fa-trash"></i> Delete';
                 del.onclick = () => confirmDelete(u.id);
                 actions.append(del);
             }

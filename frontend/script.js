@@ -72,7 +72,7 @@ function getStatusClass(level) {
 function updateSensorValues() {
     let mq2Element = document.getElementById("val-mq2");
     let mq9Element = document.getElementById("val-mq9");
-    let mq135Element = document.querySelector(".val-mq135");
+    let mq135Element = document.querySelector("val-mq135");
 
     if (mq2Element) mq2Element.textContent = sensorData.mq2;
     if (mq9Element) mq9Element.textContent = sensorData.mq9;
@@ -155,15 +155,22 @@ function updateRiskLevel() {
 }
 // 12. UPDATE DEVICE STATUS
 function updateDeviceStatus() {
-    let deviceElement = document.querySelector(".val-online");
+
+    let deviceElement = document.querySelector(".val-online, .val-offline");
+
     if (!deviceElement) return;
 
     if (deviceOnline) {
+
         deviceElement.textContent = "Online";
+
         deviceElement.classList.remove("val-offline");
         deviceElement.classList.add("val-online");
+
     } else {
+
         deviceElement.textContent = "Offline";
+
         deviceElement.classList.remove("val-online");
         deviceElement.classList.add("val-offline");
     }
